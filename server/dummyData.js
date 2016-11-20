@@ -1,5 +1,8 @@
 import Post from './models/post';
 
+import {User, Dahakni} from './models';
+
+
 export default function () {
   Post.count().exec((err, count) => {
     if (count > 0) {
