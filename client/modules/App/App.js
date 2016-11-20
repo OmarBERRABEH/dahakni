@@ -28,7 +28,7 @@ export class App extends Component {
     this.props.dispatch(toggleAddPost());
   };
 
-  render() {
+   render() {
     return (
       <div>
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
@@ -54,7 +54,6 @@ export class App extends Component {
             toggleAddPost={this.toggleAddPostSection}
           />
           <div className={styles.container}>
-            {this.props.children}
           </div>
           <Footer />
         </div>

@@ -37,10 +37,9 @@ const renderFullPage = (html, initialState) => {
         <div id="root">${html}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-          ${process.env.NODE_ENV === 'production' ?
-          `//<![CDATA[
+          //<![CDATA[
           window.webpackManifest = ${JSON.stringify(chunkManifest)};
-          //]]>` : ''}
+          //]]>
         </script>
         <script src='${process.env.NODE_ENV === 'production' ? assetsManifest['/vendor.js'] : '/vendor.js'}'></script>
         <script src='${process.env.NODE_ENV === 'production' ? assetsManifest['/app.js'] : '/app.js'}'></script>
@@ -71,7 +70,7 @@ const reactStarter = (req, res, next) => {
       }
 
       const store = configureStore();
-
+      
       return fetchComponentData(store, renderProps.components, renderProps.params)
         .then(() => {
           const initialView = renderToString(

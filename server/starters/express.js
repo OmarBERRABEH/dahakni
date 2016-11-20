@@ -8,6 +8,7 @@ import path from 'path';
 
 
 import posts from '../routes/post.routes';
+import dahaknies from '../routes/dahakni.routes'
 import serverConfig from '../config';
 import {reactStarter, renderFullPage } from './reactServer';
 
@@ -25,7 +26,8 @@ const applyMidlware = (app) => {
 
 
 const applyRouter = (app) => {
-	app.use('/api', posts);
+	app.use('/api', dahaknies);
+	// app.use('/api', posts);
 };
 
 

@@ -7,7 +7,7 @@ const dahakniSchema = new Schema({
 	content: 	{type: 'string', required: true},
 	status: 	{type: 'String', enum: ['view', 'append', 'removed'], required: true},
 	_owner: 	{type: Number, ref: 'User' },
-	dataAdded:  {type: 'Date', default: Date.now, required: true}
+	dateAdded:  {type: 'Date', default: Date.now, required: true}
 });
 
 
