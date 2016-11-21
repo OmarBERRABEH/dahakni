@@ -32,7 +32,7 @@ class DahakniListPage extends Component {
   render() {
     return (
       <div>
-       knidaha
+       <DahakniList dahaknies={this.props.dahaknies}  handleDahakniDelete={this.handleDahakniDelete} />
       </div>
     );
   }
